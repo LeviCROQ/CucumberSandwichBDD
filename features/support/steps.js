@@ -18,7 +18,19 @@ const {Given, When, Then} = require('@cucumber/cucumber');
 // ----------------------------------------------------------------------------
 
 Given("a fibonacci sequence initialized to {int}", function(value) {
-    this.fibonacci.init(value);
+    try {
+        this.fibonacci.init(value);
+    } catch {
+        this.itThrew();
+    }
+});
+
+Given("a fibonacci sequence initialized to {string}", function(value) {
+    try {
+        this.fibonacci.init(value);
+    } catch {
+        this.itThrew();
+    }
 });
 
 When("a fibonacci sequence is started", function() {
@@ -35,4 +47,8 @@ Then("the next number should be {int}", function(value) {
 
 Then("the state should be {string}", function(value) {
     assert(this.fibonacci.state() == value);
+});
+
+Then("an error is thrown", function() {
+    assert(this.hasThrown());
 });
