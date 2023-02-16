@@ -38,7 +38,7 @@ Feature: Fibonacci number sequences
   Scenario: Initialized with an illegitimate integer 
     Given a fibonacci sequence initialized to 4
     Then an error is thrown
-
+  
   Scenario: Initialized with an illegitimate integer then skipped
     Given a fibonacci sequence initialized to 4
     Then an error is thrown
@@ -51,3 +51,5 @@ Feature: Fibonacci number sequences
     Then the next number should be 34
     When the sequence is skipped 2 times
     Then the state should be "The current number is 89"
+
+  
