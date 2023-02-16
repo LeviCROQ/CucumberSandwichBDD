@@ -25,7 +25,7 @@ Given("a fibonacci sequence initialized to {int}", function(value) {
     }
 });
 
-Given("a fibonacci sequence initialized to {string}", function(value) {
+When("a fibonacci sequence initialized to {string}", function(value) {
     try {
         this.fibonacci.init(value);
     } catch {

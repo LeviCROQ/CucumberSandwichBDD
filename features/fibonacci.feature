@@ -32,7 +32,7 @@ Feature: Fibonacci number sequences
     And the next number should be 34
 
   Scenario: Initialized with a string
-    Given a fibonacci sequence initialized to "Howdy"
+    When a fibonacci sequence initialized to "Howdy"
     Then an error is thrown
 
   Scenario: Initialized with an illegitimate integer 
