@@ -39,6 +39,12 @@ Feature: Fibonacci number sequences
     Given a fibonacci sequence initialized to 4
     Then an error is thrown
 
+  Scenario: Initialized with an illegitimate integer then skipped
+    Given a fibonacci sequence initialized to 4
+    Then an error is thrown
+    When the sequence is skipped 2 times
+    Then an error is thrown
+
   Scenario: Sequence is initialized and skipped, then next value returned and skipped again
     Given a fibonacci sequence initialized to 5
     When the sequence is skipped 3 times
